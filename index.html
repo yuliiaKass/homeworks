@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS</title>
+</head>
+<body>
+    <script>
+        let age;
+        const firstYearOption = 'рік';
+        const secondYearOption = 'роки';
+        const thirdYearOption = 'років';
+
+        age = prompt('Привіт! Скільки тобі років?'); 
+        if (+age !== (NaN, undefined, null) && +age > 0 && +age < 123) {
+            if (+age > 100) {
+                  age = prompt(`Чєл, тобі більше 100 ${thirdYearOption}! Ти впевнений, що ти живий? Якщо так, вводь свій вік ще раз і жмакай ОК`);
+            } 
+
+            if (+age === 1 || (+age%10 == 1 && +age !== 11 && +age !== 111) || +age%100 == 1) {
+                alert(`Тобі ${age} ${firstYearOption}!`);
+            } else if (+age === 2 || +age === 3 || +age === 4 
+                || (+age%10 === 2 && +age !== 12 && +age%100 !== 12)
+                || (+age%10 === 3 && +age !== 13 && +age%100 !== 13)
+                || (+age%10 === 4) && +age !== 14 && +age%100 !== 14) {
+                alert(`Тобі ${age} ${secondYearOption}!`);
+            } else {
+                alert(`Тобі ${age} ${thirdYearOption}!`);
+            }
+        } else {
+            alert('Божечки, ти або обманщік, або ввів якусь чухню! Онови, будь ласка, сторінку та введи свій вік числом.');
+        }
+    </script>
+</body>
+</html>
