@@ -7,23 +7,24 @@
 </head>
 <body>
     <script>
-        let age;
         const firstYearOption = 'рік';
         const secondYearOption = 'роки';
         const thirdYearOption = 'років';
 
-        age = prompt('Привіт! Скільки тобі років?'); 
-        if (+age !== (NaN, undefined, null) && +age > 0 && +age < 123) {
-            if (+age > 100) {
-                  age = prompt(`Чєл, тобі більше 100 ${thirdYearOption}! Ти впевнений, що ти живий? Якщо так, вводь свій вік ще раз і жмакай ОК`);
-            } 
+        let age = +(prompt('Привіт! Скільки тобі років?'))
+        let remainderOfTen = age%10;
+        let remainderOfHundred = age%100;
 
-            if (+age === 1 || (+age%10 == 1 && +age !== 11 && +age !== 111) || +age%100 == 1) {
+        const case1 = remainderOfTen === 1 && remainderOfHundred !== 11;
+        const case2 = (remainderOfTen === 2 && remainderOfHundred !== 12) || (remainderOfTen === 3 && remainderOfHundred !== 13) || (remainderOfTen === 4 && remainderOfHundred !== 14);
+
+        if (age > 0) {
+            if (age > 122) {
+                age = +prompt(`Чєл, тобі більше, ніж 123 ${secondYearOption}! Ти впевнений, що ти живий? Якщо так, то ти найдоросліша людина в світі. Вводь свій вік ще раз і жмакай ОК`);
+            }
+            if(case1) {
                 alert(`Тобі ${age} ${firstYearOption}!`);
-            } else if (+age === 2 || +age === 3 || +age === 4 
-                || (+age%10 === 2 && +age !== 12 && +age%100 !== 12)
-                || (+age%10 === 3 && +age !== 13 && +age%100 !== 13)
-                || (+age%10 === 4) && +age !== 14 && +age%100 !== 14) {
+            } else if (case2) {
                 alert(`Тобі ${age} ${secondYearOption}!`);
             } else {
                 alert(`Тобі ${age} ${thirdYearOption}!`);
