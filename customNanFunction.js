@@ -1,12 +1,11 @@
 function customIsNaN(value) {
     if (value + 0 === value || value === null || typeof value === 'boolean') {
         return false;
-    } else {
-        return true;
     }
+    return true;
 }
-console.log('customIsNaN', customIsNaN('boolean'));
+console.log('customIsNaN', customIsNaN(44));
 
 
 // for checking
-console.log('isNaN', isNaN('boolean'));
+console.log('isNaN', isNaN(44));
